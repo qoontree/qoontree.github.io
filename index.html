@@ -1,1 +1,21 @@
-Hello world
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1>Posts</h1>
+  <a href="http://192.168.0.39:7900/#/?token=91ac5e8da1338750df1462ef94a78082b067934a&username=dev@qoontree.com"></a>
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
